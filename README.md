@@ -1,6 +1,6 @@
 # Stairs detection
 
- ##Group number 9  
+ -Group number 9  
 
 
 |   Fullname       |   Num_etu    |            email                |
