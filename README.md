@@ -1,8 +1,8 @@
 # Stairs detection
 
- - Group number 9 -  
+ - Group number : 9 
 
-Group members :
+ - Group members :
 
 |   Fullname       |   Num_etu    |            email                |
 |------------------|--------------|---------------------------------|
@@ -11,7 +11,7 @@ Group members :
 |   Bilal RABIA    |   21911527   |      rabiabily@gmail.com        |
 
 
-Project description :
+ - Project description :
 
 
 
