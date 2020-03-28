@@ -11,7 +11,7 @@
 |   Bilal RABIA    |   21911527   |      rabiabily@gmail.com        |
 
 
- - Project description :
+ - Project description de la base de données : ./DescriptionBaseDonnees.doc
 
 
 
