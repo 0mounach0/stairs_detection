@@ -12,6 +12,7 @@
 
 
  - Project description de la base de données : ./DescriptionBaseDonnees.doc
+ - Algo file : ./code/Stairs/Stairs/Algo.cpp 
 
 First problem will come accross: Houghline transform will give you many lines. To get the available lines, I eliminate the lines whose y-axis values are close to each other. I decided this threshold by considering the minimum distance between two stairs.
 
