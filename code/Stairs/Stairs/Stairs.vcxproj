@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algo.cpp" />
     <ClCompile Include="connectedComponents.cpp" />
     <ClCompile Include="hough.cpp" />
     <ClCompile Include="canny.cpp" />
