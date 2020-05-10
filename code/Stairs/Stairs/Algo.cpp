@@ -44,8 +44,12 @@ int main(int argc, char** argv)
 
     for (size_t i = 1; i < lines.size(); i++)
     {
-        Vec4i l = lines[i];
-        line(Hough_img, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, cv::LINE_AA);
+        //-------------Removal of vertical HoughLines----------------
+        if (abs(lines[i][1] - lines[i][3]) < 20)
+        {
+            Vec4i l = lines[i];
+            line(Hough_img, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, cv::LINE_AA);
+        }
     }
 
     imshow("Hough filter", Hough_img);
