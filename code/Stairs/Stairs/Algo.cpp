@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char** argv)
 {
     //-----------------get image file-------------------
-    CommandLineParser parser(argc, argv, "{@input | stairs_0.jpg | input image}");
+    CommandLineParser parser(argc, argv, "{@input | stair_00.jpg | input image}");
     Mat img = imread(samples::findFile(parser.get<String>("@input")));
     
     if (img.empty())
@@ -65,24 +65,29 @@ int main(int argc, char** argv)
 
     for (size_t i = 1; i < lines.size(); i++)
     {
-        Vec4i l = lines[i];
-        for (int m : lines_y)
-        {
-            if (abs(m - l[1]) < 25)
-                check = false;
+        //-------------Removal of vertical HoughLines----------------
+        if (abs(lines[i][1] - lines[i][3]) < 23) {
+
+            Vec4i l = lines[i];
+            for (int m : lines_y)
+            {
+                if (abs(m - l[1]) < 20)
+                    check = false;
+
+            }
+            if (check == true)
+            {
+                line(res_img, Point(0, l[1]), Point(img.cols, l[1]), Scalar(0, 0, 255), 3, cv::LINE_AA);
+                lines_y.push_back(l[1]);
+                stair_counter++;
+            }
+            check = true;
 
         }
-        if (check == true)
-        {
-            line(res_img, Point(0, l[1]), Point(img.cols, l[1]), Scalar(0, 0, 255), 3, cv::LINE_AA);
-            lines_y.push_back(l[1]);
-            stair_counter++;
-        }
-        check = true;
 
     }
 
-    putText(res_img, "stairs count:" + to_string(stair_counter), Point(40, 60), FONT_HERSHEY_SIMPLEX, 1.5, Scalar(0, 255, 0), 2);
+    putText(res_img, "c:" + to_string(stair_counter), Point(40, 60), FONT_HERSHEY_SIMPLEX, 1.5, Scalar(0, 255, 0), 2);
     
     imshow("detected lines", res_img);
     
